@@ -1,5 +1,25 @@
 <html lang="en">
  <head>
+   <style>
+        /* Back to Top Button Styles */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+            font-size: 16px;
+        }
+
+        #backToTop:hover {
+            background: #0056b3;
+        }
+    </style>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -7,6 +27,22 @@
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
+  <script>
+            // Show button when scrolling down
+        window.onscroll = function() {
+            let button = document.getElementById("backToTop");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        // Smooth scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+	</script>	
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
  </head>
@@ -37,6 +73,9 @@
    </div>
   </nav>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">⬆</button>
+
   <!-- Hero Section -->
   <section class="bg-gray-900 text-white py-20">
    <div class="container mx-auto text-center">
@@ -52,6 +91,7 @@
    </div>
   </section>
   <!-- Services Section -->
+  <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="home-tab">
   <section class="py-20">
    <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-12">
@@ -131,12 +171,12 @@
      </div>
      <div class="bg-white p-6 rounded-lg shadow-lg">
       <h3 class="text-xl font-bold mb-2">
-       Project Manager
+       Javascript Developer
       </h3>
       <p>
-       We need an experienced project manager to oversee our software development projects and ensure timely delivery.
+       We are looking for a highly skilled React.js Developer with at least 3 years of hands-on experience in developing and maintaining scalable web applications. As a React.js Developer, you will work closely with a team of engineers, designers, and product managers to build user-friendly, dynamic interfaces and ensure our platforms are performing at their best..
       </p>
-      <a class="text-blue-500 hover:underline mt-4 block" href="#">
+      <a class="text-blue-500 hover:underline mt-4 block" href="#reactdev">
        Apply Now
       </a>
      </div>
@@ -166,15 +206,65 @@
    </div>
   </section>
   
-    <div class="tab-pane fade" id="uxdesigner" role="tabpanel" aria-labelledby="home-tab">
+	    <div class="tab-pane fade" id="reactdev" role="tabpanel" aria-labelledby="home-tab">
   <section class="bg-gray-900 text-white py-20">
    <div class="container mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-12">
-     UI/UX Designer - L1
+    <h2 style="text-align: left;" class="text-3xl font-bold mb-12">
+     JavaScript Developer
     </h2>
-    <p class="text-lg mb-8">
-	Details - TBD
-	</p>
+        <section style="text-align: left;" id="job-description">
+            <h2 class="text-2xl font-bold mb-09">Job Description</h2>
+            <p>This is a full-time on-site role located in Bengaluru for a JavaScript Developer. We are looking for a highly skilled React.js Developer with at least 3 years of hands-on experience in developing and maintaining scalable web applications. As a React.js Developer, you will work closely with a team of engineers, designers, and product managers to build user-friendly, dynamic interfaces and ensure our platforms are performing at their best.</p>
+        </section>
+
+        <section style="text-align: left;" id="responsibilities">
+            <h2 class="text-2xl font-bold mb-09">Responsibilities</h2>
+            <ul>
+			<li>Develop and maintain user interfaces using React.js and other modern web technologies.</li>
+			<li>Collaborate with cross-functional teams to deliver high-quality, responsive web applications.</li>
+			<li>Write clean, efficient, and reusable code following best practices and coding standards.</li>
+			<li>Troubleshoot and debug issues across different browsers and platforms.</li>
+			<li>Optimize web applications for speed, scalability, and responsiveness.</li>
+			<li>Stay up to date with the latest trends and technologies in front-end development.</li>
+			<li>Participate in code reviews and contribute to team knowledge-sharing.</li>
+			<li>Implement unit and integration tests for React components.</li>
+			<li>Assist in refining product specifications and user stories.</li>
+            </ul>
+        </section>
+
+        <section id="requirements" style="text-align: left;">
+            <h2 class="text-2xl font-bold mb-09">Requirements</h2>
+            <ul>
+				<li>3+ years of professional experience with React.js development.</li>
+				<li>Strong proficiency in JavaScript, ES6+, and React.js.</li>
+				<li>Experience with state management libraries such as Redux or Context API.</li>
+				<li>Strong understanding of HTML5, CSS3, and responsive design principles.</li>
+				<li>Familiarity with RESTful APIs and asynchronous data fetching.</li>
+				<li>Experience with version control (Git).</li>
+				<li>Knowledge of modern front-end build tools like Webpack, Babel, etc.</li>
+				<li>Familiarity with testing frameworks such as Jest or Mocha.</li>
+				<li>Excellent problem-solving skills and attention to detail.</li>
+				<li>Good communication skills and the ability to work effectively in a team environment.</li>
+				<li>A degree in Computer Science, Engineering, or a related field is a plus.</li>
+            </ul>
+        </section>
+
+        <section id="application-form" style="text-align: left;">
+            <h2 class="text-2xl font-bold mb-11" style="text-align: center;">Apply Now</h2>
+            <form action="/submit-application" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="resume">Upload Resume:</label>
+                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+                <button type="submit" style = "display: block; margin: 20 auto; text-align: center" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600">Submit Application</button>
+            </form>
+        </section>
+
 	</div>
 	</section>
 	</div>
@@ -229,10 +319,12 @@
 	</div>
 	</section>
 	</div>
+  </div>
   
   <!-- Contact Section -->
   <div class="tab-pane fade" id="contactus" role="tabpanel" aria-labelledby="home-tab">
   <section class="bg-gray-900 text-white py-20">
+  <br><br><br><br><br><br><br>
    <div class="container mx-auto text-center">
     <h2 class="text-3xl font-bold mb-12">
      Contact Us
